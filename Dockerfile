@@ -2,7 +2,7 @@ FROM jboss/wildfly:20.0.1.Final
 COPY org /opt/jboss/wildfly/modules/org
 COPY standalone.xml /opt/jboss/wildfly/standalone/configuration
 
-ADD My-App-Docker/target/My-App-Docker.war /opt/jboss/wildfly/standalone/deployments/
+ADD practica/target/practica.war /opt/jboss/wildfly/standalone/deployments/
 
 RUN /opt/jboss/wildfly/bin/add-user.sh admin Admin#123 --silent
 
