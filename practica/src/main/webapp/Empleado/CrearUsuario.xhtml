@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:z="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+		crossorigin="anonymous" />
+	<script src="https://kit.fontawesome.com/72ad08e112.js"
+		crossorigin="anonymous"></script>
+	<title>Administrador</title>
+</h:head>
+<h:body>
+	<header id="main-header" class="py-2 bg-dark text-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<h2>
+					<i class="fas fa-user-plus"></i> Crear Clientes
+				</h2>
+			</div>
+		</div>
+	</div>
+	</header>
+	<div>
+		<h:form class="was-validated">
+			<section id="details">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="card">
+							<div class="card-header">
+								<i class="fas fa-filter"></i>
+								<h4>Opciones</h4>
+							</div>
+							<div class="card-body">
+								<div class="modal-body">
+									<div class="d-grid gap-2 col-6 mx-auto">
+										<h:commandLink
+											action="#{navigator.reglaRedir('PrincipalEmpleadoJSF.xhtml')}"
+											class="btn btn-success">
+											<i class="fas fa-tasks"></i> Regresar
+											</h:commandLink>
+										<h:commandLink action="#{navigator.reglaRedir('salir')}"
+											class="btn btn-danger">
+											<i class="fas fa-sign-out-alt"></i> Cerrar Session
+											</h:commandLink>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</section>
+		</h:form>
+	</div>
+	<div>
+		<h:form class="was-validated">
+			<section id="details">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="card">
+							<div class="card-header">
+								<h4>Crear Clientes</h4>
+							</div>
+							<div class="card-body">
+								<div class="modal-body">
+									<h:form id="crearUsuario">
+										<div class="row">
+											<div class="mb-3 row">
+												<label for="staticEmail" class="col-sm-2 col-form-label">
+													Nombre </label>
+												<div class="col-sm-10">
+													<h:inputText id="nombre" value="#{personaBean.nombre}"
+														class="form-control" z:placeholder="Nombre"></h:inputText>
+												</div>
+											</div>
+											<div class="mb-3 row">
+												<label for="staticEmail" class="col-sm-2 col-form-label">
+													Apellido </label>
+												<div class="col-sm-10">
+													<h:inputText id="apellido" value="#{personaBean.apellido}"
+														class="form-control" z:placeholder="Apellido"></h:inputText>
+												</div>
+											</div>
+											<div class="mb-3 row">
+												<label for="staticEmail" class="col-sm-2 col-form-label">
+													Cedula </label>
+												<div class="col-sm-10">
+													<h:inputText id="cedula" value="#{personaBean.cedula}"
+														class="form-control" z:placeholder="cedula"></h:inputText>
+												</div>
+											</div>
+											<div class="mb-3 row">
+												<label for="staticEmail" class="col-sm-2 col-form-label">
+													Direccion </label>
+												<div class="col-sm-10">
+													<h:inputText id="direccion"
+														value="#{personaBean.direccion}" class="form-control"
+														z:placeholder="Direccion"></h:inputText>
+												</div>
+											</div>
+											<div class="mb-3 row">
+												<label for="staticEmail" class="col-sm-2 col-form-label">
+													Telefono </label>
+												<div class="col-sm-10">
+													<h:inputText id="telefono" value="#{personaBean.telefono}"
+														class="form-control" z:placeholder="Telefono"></h:inputText>
+												</div>
+											</div>
+											<div class="mb-3 row">
+												<label for="staticEmail" class="col-sm-2 col-form-label">
+													Correo </label>
+												<div class="col-sm-10">
+													<h:inputText id="correo" value="#{personaBean.correo}"
+														class="form-control" z:placeholder="ejemplo@gmail.com"></h:inputText>
+												</div>
+											</div>
+										</div>
+										<p:commandButton class="btn btn-success"
+											value="Agregar Cliente"
+											action="#{personaBean.agregarPersona}" update="crearUsuario"
+											resetValues="" />
+
+									</h:form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</section>
+		</h:form>
+	</div>
+	<footer id="pie-pagina" class="bg-secondary text-white mt-5 p-5">
+	<div class="container">
+		<div class="col">
+			<p class="lead text-center">Juan Fernando Cordova- Jose
+				Pandiguana</p>
+		</div>
+	</div>
+	</footer>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+		crossorigin="anonymous"></script>
+</h:body>
+
+</html>
